@@ -37,7 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
               elevation: 2,
               child: ListTile(
                 title: Text(data.name, style: Theme.of(context).textTheme.bodyLarge),
-                subtitle: Text("Attendance: ${data.attendance}%", style: Theme.of(context).textTheme.bodySmall),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Attendance: ${data.attendance}%", style: Theme.of(context).textTheme.bodySmall),
+                    Text("Profession: ${data.profession}", style: Theme.of(context).textTheme.bodySmall),
+                  ],
+                ),
               ),
             );
           },

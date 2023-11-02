@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xml_api_integration_in_flutter/model/student_model.dart';
 import 'package:xml_api_integration_in_flutter/provider/student.dart';
+import 'package:xml_api_integration_in_flutter/view/web_page.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -36,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Theme.of(context).primaryColor,
               elevation: 2,
               child: ListTile(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const WebViewPage())),
                 title: Text(data.name, style: Theme.of(context).textTheme.bodyLarge),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
